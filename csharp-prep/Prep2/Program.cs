@@ -11,7 +11,7 @@ class Program
 
         char letter = ' ';
         char sign = ' ';
-        float remainder = 0;
+        float remainder;
 
         if (grade >= 90){
             letter = 'A';
