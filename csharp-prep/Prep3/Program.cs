@@ -5,10 +5,13 @@ class Program
 {
     static void Main(string[] args)
     {
+        List<int> listOfNumbers = new List<int>();
         string playAgain = " ";
         int guessedNumber = 0;
-        int numberOfGuesses = 0;
+        int numberOfGuesses;
     do{
+        listOfNumbers.Clear();
+        numberOfGuesses = 0;
 
         Random randomGenerator = new Random();
         int magicNumber = randomGenerator.Next(1, 101);
@@ -20,24 +23,39 @@ class Program
             guessedNumber = int.Parse(userInput);
 
             if (guessedNumber > magicNumber){
-                WriteLine("Lower");
+                WriteLine("Guess Lower");
+                listOfNumbers.Add(guessedNumber);
                 numberOfGuesses++;
             }
             else if (guessedNumber < magicNumber){
-                WriteLine("Higher");
+                WriteLine("Guess Higher");
+                listOfNumbers.Add(guessedNumber);
                 numberOfGuesses++;
             }
             else if (guessedNumber == magicNumber){
-                WriteLine("You guessed it");
+                WriteLine("You guessed it!");
             }
 
          }while (guessedNumber != magicNumber);
-        WriteLine($"You guessed: {numberOfGuesses} times.");
+        WriteLine($"You guessed it in: {numberOfGuesses} times.");
 
-        Write("Do you want to play again(yes)?  ");
+        Write($"Your guesses: ");
+        foreach (int number in listOfNumbers){
+            if (number == listOfNumbers.Last())
+            {
+                Write($"{number}");
+            }
+            else 
+            {
+                Write($"{number}, ");
+            }
+        }
+
+        WriteLine();
+        Write("Do you want to play again(yes)? ");
         playAgain = ReadLine();
 
-       }while (playAgain.ToLower() == "yes");
+       }while (playAgain.ToLower() == "yes" || playAgain.ToLower() == "y");
 
     }
 }
