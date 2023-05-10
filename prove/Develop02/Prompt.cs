@@ -1,17 +1,14 @@
 using static System.Console;
 
-
 public class Prompt{
 
-    List<string> _usedPrompts = new List<string>();
-    List<string> _prompts = new List<string>();
+    private string _prompt;
 
-    public Prompt(){
-        _prompts.Add("How was your day?");
+    public Prompt(string prompt){
+        _prompt = prompt;
     }
 
-    public string GetRandomPrompt(){
-        return "This is a prompt";
-
+    public string GetPrompt(){
+        return _prompt;
     }
 }
