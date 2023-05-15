@@ -10,7 +10,7 @@ public class Menu {
     public void Display(){
         string responds = "";
         string[] options = {"W", "D", "L", "S", "Q"};
-        while(responds != "5")
+        while(responds != "Q")
         {
             while(options.Contains(responds) == false) 
             {
