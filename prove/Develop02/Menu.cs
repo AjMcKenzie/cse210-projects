@@ -9,37 +9,37 @@ public class Menu {
 
     public void Display(){
         string responds = "";
-        string[] options = {"1", "2", "3", "4", "5"};
+        string[] options = {"W", "D", "L", "S", "Q"};
         while(responds != "5")
         {
             while(options.Contains(responds) == false) 
             {
                 WriteLine("");
-                Write("1. Write\n2. Display\n3. Load\n4. Save\n5. Quit\n\nWhat do you want to do? ");
+                Write("[W]rite\n[D]isplay\n[L]oad\n[S]ave\n[Q]uit\n\nWhat do you want to do? ");
                 responds = ReadLine() ?? String.Empty;
                 responds = responds.ToUpper();
             }
             switch (responds)
             {
-                case "5":
+                case "Q":
                     Environment.Exit(0);
                     break;
 
-                case "1":
+                case "W":
                     _journal.ShowPrompt();
                     Write("> ");
                     string entry = ReadLine() ?? String.Empty;
                     _journal.AddEntry(new Entry(entry));
                     break;
                 
-                case "2":
+                case "D":
                     _journal.ShowEntries();
                     break;
 
-                case "3":
+                case "S":
                     break;
                 
-                case "4":
+                case "L":
                     break;
             }
             responds = "";
