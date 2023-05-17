@@ -2,15 +2,14 @@ using static System.Console;
 
 public class Journal{
 
-    private List<Prompt> _prompts = new List<Prompt>();
     private List<Entry> _entries = new List<Entry>();
 
-    public Journal(){
-        _prompts.Add(new Prompt("What was the most memorable thing that happened today?"));
-        _prompts.Add(new Prompt("What did I learn today?"));
-        _prompts.Add(new Prompt("What was the biggest challenge I faced today?"));
-        _prompts.Add(new Prompt("Who made me smile today?"));
-        _prompts.Add(new Prompt("What am I grateful for today?"));
+    public Journal(){}
+
+     public void ShowPrompt()
+    {
+        Prompt prompt = new Prompt();
+        NicePrint(prompt.GetRandomPrompt());
     }
 
     private void NicePrint(string item){
@@ -19,15 +18,9 @@ public class Journal{
         WriteLine("---------------------------------");
     }
 
-    public void ShowPrompt(){
-        var random = new Random();
-        var randomNumber = random.Next(0, _prompts.Count());
-        NicePrint(_prompts[randomNumber].GetPrompt());
-    }
-
-
     public void AddEntry(Entry entry){
         _entries.Add(entry);
+
     }
 
     public void ShowEntries(){
@@ -40,5 +33,10 @@ public class Journal{
                 WriteLine(entry.GetEntry());
             }
         }
+    }
+
+    public List<Entry> GetEntries()
+    {
+        return _entries;
     }
 }

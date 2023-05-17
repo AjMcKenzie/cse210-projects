@@ -2,9 +2,11 @@ using static System.Console;
 
 public class Menu {
     private Journal _journal;
+     private FileHandler _fileHandler;
 
-    public Menu(Journal journal){
+    public Menu(Journal journal, FileHandler fileHandler){
         _journal = journal;
+        _fileHandler = fileHandler;
     }
 
     public void Display(){
@@ -37,6 +39,7 @@ public class Menu {
                     break;
 
                 case "S":
+                     _fileHandler.SaveEntries(_journal.GetEntries());
                     break;
                 
                 case "L":
