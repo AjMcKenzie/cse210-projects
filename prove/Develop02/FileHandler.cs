@@ -25,7 +25,24 @@ public class FileHandler{
         }
     }
 
-    public void LoadEntries(List<Entry> entries){
+    public List<Entry> LoadEntries(){
+        List<Entry> entries = new List<Entry>();
+        
+        if (!File.Exists(_filePath))
+        {
+            WriteLine("File not found. Please check the file path.");
+            return entries;
+        }
+        using (StreamReader file = new StreamReader(_filePath))
+        {
+            string line;
+            while ((line = file.ReadLine()) != null)
+            {
+                Entry entry = new Entry(line);
+                entries.Add(entry);
+            }
+        }
 
+        return entries;
     }
 }

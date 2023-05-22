@@ -43,6 +43,7 @@ public class Menu {
                     break;
                 
                 case "L":
+                    _fileHandler.LoadEntries();
                     break;
             }
             responds = "";
