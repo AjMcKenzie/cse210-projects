@@ -14,8 +14,7 @@ public class FileHandler{
     {
     }
 
-    public void SaveEntries(List<Entry> entries)
-    {
+    public void SaveEntries(List<Entry> entries){
         string filePath = "myJournal.txt";
         using (StreamWriter file = new StreamWriter(filePath))
         {
@@ -24,5 +23,9 @@ public class FileHandler{
                 file.WriteLine(entry.GetEntry());
             }
         }
+    }
+
+    public void LoadEntries(List<Entry> entries){
+
     }
 }
