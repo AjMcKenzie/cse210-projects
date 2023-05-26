@@ -1,19 +1,5 @@
 using static System.Console;
 
-// public class Prompt{
-//     private string _prompt;
-
-//     public Prompt(string prompt){
-
-//         _prompt = prompt;
-//     }
-
-//     public string GetPrompt(){
-//         return _prompt;
-//     }
-// }
-
-
 public class Prompt
 {
     private List<string> _prompts = new List<string>()
@@ -34,5 +20,12 @@ public class Prompt
         Random random = new Random();
         int randomNumber = random.Next(0, _prompts.Count);
         return _prompts[randomNumber];
+    }
+
+
+    public void NicePrint(string item){
+        WriteLine("---------------------------------");
+        WriteLine($"Prompt: {item}");
+        WriteLine("---------------------------------");
     }
 }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 
 public class FileHandler{
-    private string _filePath;
+    private string _filePath = "myJournal.txt";
 
     public FileHandler(string filePath)
     {
@@ -14,35 +14,46 @@ public class FileHandler{
     {
     }
 
-    public void SaveEntries(List<Entry> entries){
-        string filePath = "myJournal.txt";
-        using (StreamWriter file = new StreamWriter(filePath))
+    public void SaveEntries(List<Entry> entries)
+    {
+        Write("Enter the file path (myJournal.txt): ");
+        string inputFilePath = ReadLine();
+        string filePath = string.IsNullOrWhiteSpace(inputFilePath) ? "myJournal.txt" : inputFilePath;
+
+        using (StreamWriter file = new StreamWriter(filePath, append: true))
         {
             foreach (Entry entry in entries)
             {
                 file.WriteLine(entry.GetEntry());
             }
         }
+        Write($"Saved to {filePath}\nPress enter to continue. ");
+        ReadLine();
     }
 
-    public List<Entry> LoadEntries(){
-        List<Entry> entries = new List<Entry>();
-        
-        if (!File.Exists(_filePath))
-        {
+    public void LoadEntries(){
+
+        Write("Enter the file path (myJournal.txt): ");
+        string inputFilePath = ReadLine();
+        string filePath = string.IsNullOrWhiteSpace(inputFilePath) ? "myJournal.txt" : inputFilePath;
+        Console.Clear();
+
+        if (!File.Exists(filePath)){
+
             WriteLine("File not found. Please check the file path.");
-            return entries;
-        }
-        using (StreamReader file = new StreamReader(_filePath))
-        {
-            string line;
-            while ((line = file.ReadLine()) != null)
-            {
-                Entry entry = new Entry(line);
-                entries.Add(entry);
-            }
+            return;
         }
 
-        return entries;
+        using (StreamReader file = new StreamReader(filePath)){
+
+            string line;
+            while ((line = file.ReadLine()) != null){
+
+                WriteLine(line);
+            }
+        }
+        WriteLine(" ");
+        Write("Press enter to go back. ");
+        ReadLine();
     }
 }

@@ -33,10 +33,21 @@ public class Journal{
                 WriteLine(entry.GetEntry());
             }
         }
+        WriteLine(" ");
+        Write("Press enter to go back. ");
+        ReadLine();
     }
 
     public List<Entry> GetEntries()
     {
         return _entries;
     }
+
+    public void ClearEntries()
+    {
+        _entries.Clear();
+        Write("Cleared current entires (see [D]isplay)");
+        ReadLine();
+    }
+    
 }
