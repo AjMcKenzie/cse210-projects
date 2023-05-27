@@ -1,33 +1,33 @@
 using static System.Console;
 
-public class Reference{
-
+public class Reference
+{
     private string _book;
+    private int _chapter;
     private int _start;
     private int _end;
-    private int _chapter;
 
-
-    public Reference(string book, int chapter, int start, int end){
+    public Reference(string book, int chapter, int start, int end)
+    {
         _book = book;
         _chapter = chapter;
         _start = start;
         _end = end;
     }
 
-    public Reference(string book, int chapter, int start){
+    public Reference(string book, int chapter, int start)
+    {
         _book = book;
         _chapter = chapter;
         _start = start;
+        _end = -1;
     }
 
-    public string GetReference(){
-        if(_end > 0){
+    public string GetReference()
+    {
+        if (_end > 0)
             return $"{_book} {_chapter}:{_start}-{_end}";
-        }
-        else{
+        else
             return $"{_book} {_chapter}:{_start}";
-        }
-
     }
 }

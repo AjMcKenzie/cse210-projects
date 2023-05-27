@@ -1,37 +1,42 @@
 using static System.Console;
+public class Scripture
+{
+    private List<Word> words;
+    private Random random;
+    private List<Word> hiddenWords;
+    private Reference reference;
 
-public class Scripture{
-    
-    List<string> word = new List<string>();
-    private Reference _reference;
+    public bool AllWordsHidden => words.TrueForAll(w => w.Hidden);
 
+    public Scripture(Reference reference, string text)
+    {
+        words = new List<Word>();
+        random = new Random();
+        
 
-    public Scripture(Reference reference, string text){
-        _reference = reference;
+        string[] wordArray = text.Split(' ');
+        foreach (string word in wordArray)
+        {
+            words.Add(new Word(word));
+        }
     }
 
-    public void Display(){
-
+    public void Display()
+    {
+        Console.Clear();
+        foreach (Word word in words)
+        {
+            word.Display();
+        }
     }
 
-    // public void HideRandomWord(){
-    //     foreach (var word in word){
-    //         foreach (char letter in word){
-    //             if(Char.IsLetter(letter)){
-
-    //             }
-    //             else{
-
-    //             }
-    //         }
-    //     }
-    // }
-    
-    public void showReference(){
-        Write(_reference.GetReference());
+    public void HideRandomWord()
+    {
+        List<Word> visibleWords = words.FindAll(w => !w.Hidden);
+        if (visibleWords.Count > 0)
+        {
+            int randomIndex = random.Next(visibleWords.Count);
+            visibleWords[randomIndex].HideWord();
+        }
     }
-
-
-
-
 }
