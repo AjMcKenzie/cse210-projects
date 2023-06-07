@@ -1,9 +1,10 @@
 using System;
+using static System.Console;
 
 class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello Develop04 World!");
+        WriteLine("Hello Develop04 World!");
     }
 }
