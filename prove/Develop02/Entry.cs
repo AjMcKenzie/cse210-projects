@@ -15,6 +15,10 @@ public class Entry
         _prompt =prompt;
     }
 
+    // public void ReaddEntry(){
+
+    // }
+
     public string GetEntry()
     {
         return $"Date:{_date: dd/MM/yyyy}\nPrompt: {_prompt}\n{_entry}\n";

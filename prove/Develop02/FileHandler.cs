@@ -31,11 +31,12 @@ public class FileHandler{
         ReadLine();
     }
 
-    public void LoadEntries(){
+    public void LoadEntries(/*List<Entry> entries*/){
 
         Write("Enter the file path (myJournal.txt): ");
         string inputFilePath = ReadLine();
         string filePath = string.IsNullOrWhiteSpace(inputFilePath) ? "myJournal.txt" : inputFilePath;
+
         Console.Clear();
 
         if (!File.Exists(filePath)){
@@ -44,12 +45,22 @@ public class FileHandler{
             return;
         }
 
+
         using (StreamReader file = new StreamReader(filePath)){
 
             string line;
             while ((line = file.ReadLine()) != null){
 
                 WriteLine(line);
+                /*
+
+                foreach (Entry entry in entries)
+                {
+                    file.WriteLine(entry.Readd());
+                }   
+
+
+                */
             }
         }
         WriteLine(" ");
