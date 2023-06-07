@@ -23,11 +23,11 @@ public class Reference
         _end = -1;
     }
 
-    public string GetReference()
+    public void GetReference()
     {
         if (_end > 0)
-            return $"{_book} {_chapter}:{_start}-{_end}";
+            WriteLine($"{_book} {_chapter}:{_start}-{_end}");
         else
-            return $"{_book} {_chapter}:{_start}";
+            WriteLine($"{_book} {_chapter}:{_start}");
     }
 }

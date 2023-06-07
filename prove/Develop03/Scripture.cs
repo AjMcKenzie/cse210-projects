@@ -8,12 +8,13 @@ public class Scripture
 
     public bool AllWordsHidden => words.TrueForAll(w => w.Hidden);
 
-    public Scripture(Reference reference, string text)
+    public Scripture(Reference newReference, string text)
     {
         words = new List<Word>();
         random = new Random();
-        
+        reference = newReference;
 
+        
         string[] wordArray = text.Split(' ');
         foreach (string word in wordArray)
         {
@@ -24,11 +25,14 @@ public class Scripture
     public void Display()
     {
         Console.Clear();
+
+        reference.GetReference();
         foreach (Word word in words)
         {
             word.Display();
         }
     }
+
 
     public void HideRandomWord()
     {

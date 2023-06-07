@@ -15,7 +15,7 @@ class Program
 
 
         
-        WriteLine(reference.GetReference());
+        
         scripture.Display();
         WriteLine(" ");
         WriteLine("Press Enter to continue or type 'quit' to exit.");
@@ -28,7 +28,6 @@ class Program
 
             scripture.HideRandomWord();
             Clear();
-            WriteLine(reference.GetReference());
             scripture.Display();
             WriteLine(" ");
             WriteLine("Press Enter to continue or type 'quit' to exit.");
