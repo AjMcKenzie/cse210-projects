@@ -1,6 +1,7 @@
 using static System.Console;
 
-public class Menu{
+public class EternalGoal : Goals{
 
     
+
 }

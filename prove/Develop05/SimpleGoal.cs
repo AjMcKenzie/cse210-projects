@@ -1,6 +1,5 @@
 using static System.Console;
 
-public class Menu{
-
+public class SimpleGoal : Goals{
     
 }
