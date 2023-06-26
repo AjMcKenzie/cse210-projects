@@ -1,5 +1,6 @@
 using System;
 using System.Diagnostics;
+using static System.Console;
 
 public class ReflectingActivity : Activity
 {
@@ -44,15 +45,15 @@ public class ReflectingActivity : Activity
 
     public void DisplayPrompt()
     {
-        Console.WriteLine("Consider the following: ");
-        Console.WriteLine();
+        WriteLine("Consider the following: ");
+        WriteLine();
 
         int randomIndex = new Random().Next(0, _prompts.Count());
-        Console.WriteLine(_prompts[randomIndex]);
-        Console.WriteLine();
+        WriteLine(_prompts[randomIndex]);
+        WriteLine();
 
-        Console.WriteLine("When you have something in mind, press enter to continue.");
-        Console.ReadLine();
+        WriteLine("When you have something in mind, press enter to continue.");
+        ReadLine();
     }    
 
     public void DisplayQuestions()
@@ -69,15 +70,15 @@ public class ReflectingActivity : Activity
             indexes.Add(randomInt);
         }
         Console.Clear();
-        Console.WriteLine("Now ponder on each of the following questions as they relate to this experience.");
-        Console.WriteLine();
+        WriteLine("Now ponder on each of the following questions as they relate to this experience.");
+        WriteLine();
         DisplayCountdown(5);
 
         foreach (int index in indexes)
         {
-            Console.Write(_questions[index]);
+            Write(_questions[index]);
             DisplaySpinner((GetUserSessionLengthInput() / indexes.Count()));
-            Console.WriteLine();
+            WriteLine();
         }
         
     }

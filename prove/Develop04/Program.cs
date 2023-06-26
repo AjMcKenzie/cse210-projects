@@ -1,4 +1,5 @@
 using System;
+using static System.Console;
 
 class Program
 {
@@ -8,21 +9,21 @@ class Program
         int reflectCount = 0;
         int listCount = 0;
 
-        // Console.WriteLine("Hello Develop04 World!");
-        Console.WriteLine("Welcome to the Mindfulness Program!");
-        Console.WriteLine();
+        WriteLine("Welcome to the Mindfulness Program!");
+        WriteLine();
         bool running = true;
         while (running)
         {
-            Console.WriteLine("Please select one of the following activities: ");
-            Console.WriteLine("1. Breathing Activity");
-            Console.WriteLine("2. Reflecting Activity");
-            Console.WriteLine("3. Listing Activity");
-            Console.WriteLine("4. Quit");
-            Console.WriteLine();
-            Console.Write("What would you like to do? ");
+            WriteLine("Please select one of the following activities: ");
+            WriteLine("1. Breathing Activity");
+            WriteLine("2. Reflecting Activity");
+            WriteLine("3. Listing Activity");
+            WriteLine("4. Show Amount of times completed");
+            WriteLine("5. Quit");
+            WriteLine();
+            Write("What would you like to do? ");
             int choice = int.Parse(Console.ReadLine());
-            Console.WriteLine();
+            WriteLine();
 
             switch (choice)
             {   
@@ -47,18 +48,28 @@ class Program
                     listing.RunListingActivity();
                     listCount++;
                     break;
-                //quit
+                //Show number of times
                 case 4:
+                    Console.Clear();
+                    WriteLine("You have completed:");
+                    WriteLine($"Breathing Activity: {breatheCount} time(s)");
+                    WriteLine($"Reflecting Activity: {reflectCount} time(s)");
+                    WriteLine($"Listing Activity: {listCount} time(s)");
+                    Write("Press enter to go back");
+                    ReadLine();
+                    break;
+                //Quit
+                case 5:
                     running = false;
-                    Console.WriteLine("Great job! You completed the following activities: ");
-                    Console.WriteLine($"Breathing Activity: {breatheCount} times");
-                    Console.WriteLine($"Reflecting Activity: {reflectCount} times");
-                    Console.WriteLine($"Listing Activity: {listCount} times");
-                    Console.WriteLine();
-                    Console.WriteLine("Thank you. Have a nice day!");
+                    WriteLine("Great job! You completed the following activities: ");
+                    WriteLine($"Breathing Activity: {breatheCount} time(s)");
+                    WriteLine($"Reflecting Activity: {reflectCount} time(s)");
+                    WriteLine($"Listing Activity: {listCount} time(s)");
+                    WriteLine();
+                    WriteLine("Thank you. Have a nice day!");
                     break;
                 default:
-                    Console.WriteLine("Invalid input. Please choose one of the following activities.");
+                    WriteLine("Invalid input. Please choose one of the following activities.");
                     break;
             }
      

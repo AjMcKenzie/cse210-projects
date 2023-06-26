@@ -28,13 +28,13 @@ public class BreathingActivity : Activity
 
         for(int i = 0; i < intervals; i++)
         {
-            Console.Write("Breathe in... ");
+            Write("Breathe in... ");
             CountUp();
-            Console.WriteLine();
+            WriteLine();
             
-            Console.Write("Breathe out... "); 
+            Write("Breathe out... "); 
             Countdown();
-            Console.WriteLine();
+            WriteLine();
         }
     }
 
@@ -42,18 +42,18 @@ public class BreathingActivity : Activity
     {
         for (int i = 5; i > 0; i--)
         {
-            Console.Write(i);
+            Write(i);
             Thread.Sleep(1000);
-            Console.Write("\b \b");
+            Write("\b \b");
         }
     }
     private void CountUp()
     {
         for (int i = 1; i <= 5; i++)
         {
-            Console.Write(i);
+            Write(i);
             Thread.Sleep(1000);
-            Console.Write("\b \b");
+            Write("\b \b");
         }
     }
 

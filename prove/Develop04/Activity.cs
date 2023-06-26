@@ -1,5 +1,6 @@
 using System;
 using System.Diagnostics;
+using static System.Console;
 
 public class Activity
 {
@@ -32,24 +33,24 @@ public class Activity
     public void DisplayStartingtMessage()
     {
         _startingMessage = $"Welcome to the {_activityName}.";
-        Console.WriteLine(_startingMessage);
-        Console.WriteLine();
+        WriteLine(_startingMessage);
+        WriteLine();
     }
 
     public void DisplayDescription()
     {
-        Console.WriteLine(_activityDescription);
-        Console.WriteLine();
+        WriteLine(_activityDescription);
+        WriteLine();
     }
     public void DisplayEndingMessage()
     {
         _endingMessage = $"You have complete {_userSessionLengthInput} seconds of the {_activityName}.";
 
-        Console.WriteLine();
-        Console.WriteLine("Well done!");
+        WriteLine();
+        WriteLine("Well done!");
         DisplaySpinner(3);
-        Console.WriteLine();
-        Console.WriteLine(_endingMessage);
+        WriteLine();
+        WriteLine(_endingMessage);
         DisplaySpinner(5);
         Console.Clear();
     }
@@ -73,14 +74,14 @@ public class Activity
             Thread.Sleep(200);
         }
 
-        Console.Write(" ");
+        Write(" ");
     }
 
     public void DisplayCountdown(int numSecondsToRun)
     {
         for (int i = numSecondsToRun; i >= 1; i--)
         {
-            Console.Write($"You may begin in: {i}");
+            Write($"You may begin in: {i}");
             Console.SetCursorPosition(0, Console.CursorTop);
             Thread.Sleep(1000);
         }
@@ -94,7 +95,7 @@ public class Activity
 
     public void DisplayGetReady()
     {
-        Console.WriteLine("Get ready...");
+        WriteLine("Get ready...");
         DisplaySpinner(5);
     }
 
