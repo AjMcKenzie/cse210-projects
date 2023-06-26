@@ -5,6 +5,8 @@ class Program
 {
     static void Main(string[] args)
     {
-        WriteLine("Hello Develop05 World!");
+        Menu menu = new Menu();
+
+        menu.Display();
     }
 }
