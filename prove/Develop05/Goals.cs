@@ -5,9 +5,4 @@ public class Goals{
     private int _totalPoints;
 
 
-
-    
-
-
-
 }

@@ -30,7 +30,7 @@ public class Activity
     {
         return _userSessionLengthInput;
     }
-    public void DisplayStartingtMessage()
+    public void DisplayStartingMessage()
     {
         _startingMessage = $"Welcome to the {_activityName}.";
         WriteLine(_startingMessage);
@@ -101,7 +101,7 @@ public class Activity
 
     public void RunActivityParentStart()
     {
-        DisplayStartingtMessage();
+        DisplayStartingMessage();
         DisplayDescription();
         DisplayGetSessionLength();
         DisplayGetReady();
