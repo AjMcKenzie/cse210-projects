@@ -1,3 +1,0 @@
-10
-ChecklistGoal|Test|10|ing|False|0|3|10
-SimpleGoal|Noth|10|ing|False
