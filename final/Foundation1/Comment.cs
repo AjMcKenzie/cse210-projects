@@ -11,8 +11,8 @@ public class Comment{
         _comment = comment;
     }
 
-    public string DisplayComment()
+    public void DisplayComment()
     {
-        return $"Comment: {_comment}\nMade by: {_name}";
+        WriteLine($"\"{_comment}\" -{_name}");
     }
 }

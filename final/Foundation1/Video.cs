@@ -8,27 +8,28 @@ public class Video{
     private int _length;
     private List<Comment> _comments = new List<Comment>();
 
-    public Video(string title, string author, int length, string commentName, string commentText){
-        title = _title;
-        author = _author;
-        length = _length;
-        Comment comment = new Comment(commentName, commentText);
+    public Video(string title, string author, int length){
+        _title = title;
+        _author = author;
+        _length = length;
+    }
+
+    public void addComment(Comment comment){
         _comments.Add(comment);
     }
+   
 
-
-    // public void DisplayComments()
-    // {
-        
-    // }
-    
     public void Display(){
-        WriteLine($"{_title}, Posted by: {_author}, Length: {_length}");
+        WriteLine($"\"{_title}\" -{_author} | {_length}s");
+        WriteLine($"{_comments.Count} Comments:");
         foreach (Comment comment in _comments)
             {
-                WriteLine(comment.DisplayComment());
+                comment.DisplayComment();
             }
+                WriteLine("");
     }
+
+
 
 
 }
