@@ -7,17 +7,19 @@ class Program
     {
         //order 1 
         WriteLine("================================================================");
-        Address address1 = new Address ("98 Pleasant Ave.", "Bristol", "CT", "USA");
-        Customer customer1 = new Customer("Nice Guy", address1);
+        Address address1 = new Address ("325 Bruce Ct.", "Hartwell", "GA", "USA");
+        Customer customer1 = new Customer("Aaron Aa. Aaronson", address1);
 
         double order1ShippingCost = customer1.GetShippingCost();
 
-        Product order1Product1 = new Product("Fuji Apple", "4131", 0.25, 2);
-        Product order1Product2 = new Product("Haas Avocado", "4225", 0.50, 4);
+        Product order1Product1 = new Product("Cosmic Crisp Apple", "3507", 0.25, 5);
+        Product order1Product2 = new Product("Heinz Salad Cream", "4250", 10.24, 1);
+        Product order1Product3 = new Product("Wooden Pencil (8 pack)", "3268", .50, 1);
 
         Order order1 = new Order(customer1);
         order1.AddProduct(order1Product1);
         order1.AddProduct(order1Product2);
+        order1.AddProduct(order1Product3);
         double order1Subtotal = order1.CalculateSubtotal();
         double order1Total = order1.CalculateTotal();
 
@@ -32,14 +34,14 @@ class Program
 
 
         //order 2
-        Address address2 = new Address ("Rua Garcia de Orta", "Lisbon", "Lisbon", "Portugal");
-        Customer customer2 = new Customer("Joao Garcia", address2);
+        Address address2 = new Address ("34 Vesijärvenkatu", "Lahti", "Päijänne Tavastia", "Finland");
+        Customer customer2 = new Customer("Vanhimmat McKenzie ja Hal", address2);
 
         double order2ShippingCost = customer2.GetShippingCost();
 
-        Product order2Product1 = new Product("Husked Coconut", "4260", 2.00, 5);
-        Product order2Product2 = new Product("Red Mango", "4959", 1.00, 4);
-        Product order2Product3 = new Product("Pineapple", "4029", 2.00, 2);
+        Product order2Product1 = new Product("Tuna", "4201", 1.00, 20);
+        Product order2Product2 = new Product("Past noodles", "8474", 2.00, 4);
+        Product order2Product3 = new Product("Crepe mix", "6969", 4.00, 10);
 
         Order order2 = new Order(customer2);
         order2.AddProduct(order2Product1);
