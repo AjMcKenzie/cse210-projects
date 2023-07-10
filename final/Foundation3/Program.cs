@@ -6,25 +6,25 @@ class Program
     static void Main(string[] args){
 
         Address lectureAddress = new Address("Hennalankatu 308", "Lahti", "", "Finland");
-        Lecture lecture = new Lecture("Englanninkielisiä Oppitunteja", "Teaching English for those who want to learn.", "July 12, 2023", 18, lectureAddress, "Lecture", "Vanhimmat McKenzie ja Hal", 20);
+        Lecture lecture = new Lecture("Englanninkielisiä Oppitunteja", "Teaching English for those who want to learn.", "July 12, 2023", 18.30, lectureAddress, "Lecture", "Vanhimmat McKenzie ja Hal", 20);
 
         lecture.StandardDetails();
         WriteLine("");
-        lecture.ShortDetails();
-        WriteLine("");
         lecture.FullDetails();
+        WriteLine("");
+        lecture.ShortDetails();
         WriteLine("");
 
         WriteLine("==========================================================================");
         
         Address receptionAddress = new Address("42929 Castle Cove Cir", "Maricopa", "AZ", "USA");
-        Reception reception = new Reception("John & Sarah", "John and Sarah are getting married.", "August 2, 2023", 16.30, receptionAddress, "Reception", "john.sarah4ever@gmail.com");
+        Reception reception = new Reception("John & Sarah", "John and Sarah are getting married.", "August 2, 2023", 16.15, receptionAddress, "Reception", "john.sarah4ever@gmail.com");
 
         reception.StandardDetails();
         WriteLine("");
-        reception.ShortDetails();
-        WriteLine("");
         reception.FullDetails();
+        WriteLine("");
+        reception.ShortDetails();
         WriteLine("");
         
         WriteLine("==========================================================================");
@@ -34,9 +34,9 @@ class Program
 
         outdoor.StandardDetails();
         WriteLine("");
-        outdoor.ShortDetails();
-        WriteLine("");
         outdoor.FullDetails();
+        WriteLine("");
+        outdoor.ShortDetails();
         WriteLine("");
 
 

@@ -18,18 +18,19 @@ public class Event{
         _eventType = type;  
     }
 
-    public void StandardDetails(){
-        WriteLine($"\"{_title}\"\n{_description}\nDate & Time: {_date} @ {_time.ToString("F2")}\nAddress: {_address.GetAddress()}");
-    }
-
-    public virtual void FullDetails(){
-        WriteLine($"\"{_title}\"\n{_description}\nDate & Time: {_date} @ {_time.ToString("F2")}\nAddress: {_address.GetAddress()}");
-
-    }
-
     public void ShortDetails(){
         WriteLine($"Event Type: {_eventType}\nTitle: {_title}\nDate: {_date}");
     }
+    
+    public void StandardDetails(){
+        WriteLine($"{_title}\n{_description}\nDate & Time: {_date} @ {_time.ToString("F2")}\nAddress: {_address.GetAddress()}");
+    }
+
+    public virtual void FullDetails(){
+        WriteLine($"{_title}\n{_description}\nType: {_eventType}\nDate & Time: {_date} @ {_time.ToString("F2")}\nAddress: {_address.GetAddress()}");
+
+    }
+
 
 
 }
