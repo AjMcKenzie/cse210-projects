@@ -1,9 +1,16 @@
 using static System.Console;
 
-public class OutdoorGatherings:Event{
+public class OutdoorGathering:Event{
     public string _weather;
 
-    public OutdoorGatherings(string title, string description, string date, double time, Address address, string type, string weather) : base(title, description, date, time, address, type){
+    public OutdoorGathering(string title, string description, string date, double time, Address address, string type, string weather) : base(title, description, date, time, address, type){
+        _weather = weather;
+    }
 
+
+    public override void FullDetails()
+    {
+        base.FullDetails();
+        WriteLine($"Weather: {_weather}");
     }
 }

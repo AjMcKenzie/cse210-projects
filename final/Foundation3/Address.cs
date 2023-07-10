@@ -14,9 +14,14 @@ public class Address{
         _country = country;
     }
 
-     public string GetAddress() 
+    public string GetAddress() 
     {
-        return $"{_streetAddress} {_city}, {_state}, {_country}";
+        if(string.IsNullOrWhiteSpace(_state)){
+            return $"{_streetAddress} {_city}, {_country}";
+        }
+        else{
+            return $"{_streetAddress} {_city}, {_state}, {_country}";
+        }
     }
 
 }

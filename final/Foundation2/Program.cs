@@ -33,7 +33,7 @@ class Program
         WriteLine("================================================================");
 
         //order 2
-        Address address2 = new Address ("34 Vesijärvenkatu", "Lahti", "Päijänne Tavastia", "Finland");
+        Address address2 = new Address ("Vesijärvenkatu 34", "Lahti", "", "Finland");
         Customer customer2 = new Customer("Vanhimmat McKenzie ja Hal", address2);
 
         double order2ShippingCost = customer2.GetShippingCost();
