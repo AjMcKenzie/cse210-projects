@@ -25,7 +25,7 @@ public class Address{
             return $"{_streetAddress}\n{_city}, {_country}";
         }
         else{
-            return $"{_streetAddress}\r\n{_city}, {_state}\r\n{_country}";
+            return $"{_streetAddress}\n{_city}, {_state}\n{_country}";
         }
     }
 

@@ -27,7 +27,7 @@ public class Customer{
 
     public void DisplayCustomer()
     {
-        WriteLine($"{_customerName}\r\n{_address.GetAddress()}");
+        WriteLine($"{_customerName}\n{_address.GetAddress()}");
     }
 
 
