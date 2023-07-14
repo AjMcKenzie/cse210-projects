@@ -20,12 +20,13 @@ public abstract class Activity{
         return _length;
     }
 
+    public abstract double CalculateDistance();
 
+    public abstract double CalculateSpeed();
+
+    public abstract double CalculatePace();
+    
     public abstract void GetSummary();
-
-
-
-
 
 }
 
