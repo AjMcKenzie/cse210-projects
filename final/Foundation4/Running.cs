@@ -1,10 +1,6 @@
 using static System.Console;
 
 public class Running: Activity{
-    private double _distance;
-    private double _speed;
-    private double _pace;
-
 
     public Running(double length, double distance) : base(length){
         _distance = distance;

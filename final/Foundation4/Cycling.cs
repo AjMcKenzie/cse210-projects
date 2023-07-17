@@ -1,10 +1,6 @@
 using static System.Console;
 
 public class Cycling: Activity{
-    private double _speed;
-    private double _pace;
-    private double _distance;
-
 
     public Cycling(double length, double speed) : base(length){
         _speed = speed;

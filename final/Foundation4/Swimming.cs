@@ -2,9 +2,6 @@ using static System.Console;
 
 public class Swimming: Activity{
     private int _laps;
-    private double _distance;
-    private double _speed;
-    private double _pace;
 
     public Swimming(double length, int laps): base(length){
         _laps = laps;

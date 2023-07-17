@@ -3,6 +3,9 @@ using static System.Console;
 public abstract class Activity{
     private string _date;
     private double _length;
+    protected double _speed;
+    protected double _pace;
+    protected double _distance;
 
 
     public Activity(double length){
